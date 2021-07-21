@@ -1,0 +1,124 @@
+.banner {
+    img {
+        width: 100%;
+        height: 800px;
+        object-fit: cover;
+    }
+}
+.btn {
+    &.btn-primary1 {
+        background-color: #fff;
+        border: none;
+        &:focus {
+            outline: none;
+            background-color: #fff;
+           
+        }
+        &::after {
+            width: 40px;
+            height: 40px;
+            content: " ";
+            background-image: url("../../assets/images/Untitled1.png");
+            position: absolute;
+            top: 25px;
+            right: -76px;
+            z-index: 9;
+        }
+    }
+} 
+.btn-primary.focus, .btn-primary:focus {
+    box-shadow: 0 0 0 0.2rem rgb(0 123 255 / 0%);
+}
+
+/* This css is for normalizing styles. You can skip this. */
+
+  
+  .leftWrap {
+      padding-left: 60px;
+      .left {
+          padding-top: 65px;
+      }
+      .textWrap {
+        padding-left: 60px;
+        padding-top: 140px;
+        h2 {
+            padding-bottom: 15px;
+        }
+      }
+      .newsletter {
+          position: relative;
+          &.error {
+            input {
+                border-color: #4066A5
+                ;
+            }
+          }
+        input {
+            height: 55px;
+            padding-top: 0px;
+            border-left: 3px solid #0079bf;
+            border-radius: 0px;
+        }
+      }
+  }
+  
+  .menu {
+      list-style: none;
+      padding-top: 8px;
+      li {
+          display: inline-block;
+          padding-right: 10px;
+          padding-right: 25px;
+        font-size: 14px;
+        color: #000000b5;
+      }
+  }
+
+  
+  .checkBox input {
+    padding: 0;
+    height: initial;
+    width: initial;
+    margin-bottom: 0;
+    display: none;
+    cursor: pointer;
+  }
+  
+  .checkBox label {
+    position: relative;
+    cursor: pointer;
+  }
+  
+  .checkBox label:before {
+    content:'';
+    -webkit-appearance: none;
+    background-color: transparent;
+    border: 2px solid #0079bf;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05);
+    padding: 10px;
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+    cursor: pointer;
+    margin-right: 5px;
+  }
+  
+  .checkBox input:checked + label:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 5px;
+    left: 9px;
+    width: 6px;
+    height: 14px;
+    border: solid #fff;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+  }
+  .checkBox input:checked + label:before {
+      background-color: #0079bf;
+  }
+  .form-control:focus {
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgb(0 123 255 / 0%);
+}

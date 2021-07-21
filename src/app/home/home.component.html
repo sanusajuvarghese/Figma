@@ -1,0 +1,46 @@
+<div class="container-fluid">
+    <div class="row">
+      <div class="col-md-5 leftWrap">
+        <div class="row left">
+          <div class="col-md-4">
+            <img src="../../assets/images/logo.png" alt="">
+          </div>
+          <div class="col-md-8">
+            <ul class="menu">
+              <li>About</li>
+              <li>How it works</li>
+              <li>Contact</li>
+            </ul>
+          </div>
+        </div>
+        <div class="textWrap"  *ngIf="!formValid">
+          <h2>Subscribe to newsletter</h2>
+          <p>Subscribe to our newsletter and get 10% discount on <br>
+            pineapple glasses</p>
+        </div>
+        <div class="textWrap"  *ngIf="formValid">
+          <h2>Thanks for subscribing!</h2>
+          <p>You have successfully subscribe to our email listing.
+            <br>Check your email for the discount code.
+          </p>
+        </div>
+        <form #f ="ngForm" [formGroup]="employeeDetails" *ngIf="!formValid">
+          <div class="form-group newsletter" [ngClass]="{'error':emailId.invalid && (emailId.dirty || emailId.touched) }" >
+            <label for="newsletter"></label>
+            <input type="email" class="form-control" [(ngModel)] = "selectedProduct.emailId" id="newsletter"  formControlName="emailId" placeholder="Type your email address here...">
+            
+          <button type="submit" class="btn btn-primary1" (click)="submit(f)" [disabled]="checkBox"></button>
+        </div>
+       
+        <div class="form-group checkBox">
+          <input type="checkbox" formControlName="acceptTerms" id="css" (click)="check()">
+          <label for="css">I agree to <a>terms of service</a></label>
+        </div>
+      </form>
+      </div>
+      <div class="col-md-7 banner">
+        <img src="../../assets/images/Untitled.png" alt="">
+      </div>
+    </div>
+  </div>
+ 

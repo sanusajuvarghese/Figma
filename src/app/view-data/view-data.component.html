@@ -1,0 +1,22 @@
+<nav class="navbar">
+    <input class="form-control" type="text" name="emailId"[(ngModel)]="emailId" (ngModelChange)="search()"
+    placeholder="Enter email id to search">
+</nav>
+
+<table class="table  table-bordered">
+    <tr>
+    
+    <th (click)="sort('emailId')">Email ID &nbsp; <i class="fa fa-sort" ></i></th>
+    <th  (click)="sort('date')">Date &nbsp; <i class="fa fa-sort" ></i></th>
+    <th>Operation</th>
+    </tr>
+    <tr *ngFor="let user of users | orderBy: key: reverse |paginate: {itemsPerPage:10,currentPage:p};">
+   
+    <td>{{ user.emailId }}</td>
+    <td>{{ user.date }}</td>
+    <td><button id="del" (click)="deleteProduct(user.id)">Delete</button>
+    </td>
+    <h1></h1>
+    </tr>
+    <pagination-controls (pageChange)="p=$event"></pagination-controls>
+    </table>

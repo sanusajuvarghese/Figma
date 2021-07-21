@@ -1,23 +1,23 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from "@angular/forms";
-import { ApiService } from './api.service';
-import { User} from './user';
+import { ApiService } from '../api.service';
+import { User} from '../user';
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  selector: 'app-home',
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.scss']
 })
-export class AppComponent implements OnInit {
+export class HomeComponent implements OnInit {
   user!: User[];
-  selectedProduct:User={id:0,emailId:"",date:"" }
+  selectedProduct:User={id:0,emailId:"" ,date:""}
   emailId: any;
   acceptTerms: any;
   employeeDetails: any;
   checkBox: boolean=true;
   formValid: boolean = false;
   constructor(private apiService: ApiService) { }
-  title = '';
-  ngOnInit() {
+
+  ngOnInit(): void {
     this.createFormControls();
     this.createForm();
     this.checkBox=true;
@@ -40,11 +40,11 @@ export class AppComponent implements OnInit {
     debugger
    if(this.employeeDetails.valid) {
     form.value.emailId = this.selectedProduct.emailId;
-    
+    console.log("yessss");
     
     console.log(form.value);
     this.apiService.create(form.value).subscribe((user: User)=>{
-			console.log("Product created, ", user);
+			console.log("Product created, ", user.emailId);
       this.formValid=true;
      
 });
@@ -56,4 +56,3 @@ export class AppComponent implements OnInit {
 
 }
 }
-
